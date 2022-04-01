@@ -1,6 +1,6 @@
-package com.example.football_kotlin.ModelPL
+package com.example.football_kotlin.PL.ModelPL
 
-data class CurrentSeason(
+data class Season(
     val currentMatchday: Int,
     val endDate: String,
     val id: Int,
