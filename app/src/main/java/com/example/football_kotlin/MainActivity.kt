@@ -7,6 +7,9 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.football_kotlin.L1.HomeL1
+import com.example.football_kotlin.L1.InterfaceL1.MainAPIL1
+import com.example.football_kotlin.L1.ModelL1.ModelL1Main
 import com.example.football_kotlin.PL.HomePL
 import com.example.football_kotlin.PL.InterfacePL.MainAPI
 import com.example.football_kotlin.PL.InterfacePL.PLTeams
@@ -14,6 +17,7 @@ import com.example.football_kotlin.PL.ModelPL.ModelPLHome
 import com.example.football_kotlin.PL.ModelPL.Team
 import com.example.football_kotlin.PL.ModelPL.TeamsDataPL
 import de.hdodenhof.circleimageview.CircleImageView
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,6 +35,15 @@ class MainActivity : AppCompatActivity() {
     private var tvmatchDay: TextView? = null
     private var cvPL: CardView? = null
 
+    //L1
+    var tvL1Name : TextView? = null
+    var tvL1StartDate : TextView? = null
+    var tvL1EndDate : TextView? = null
+    var tvL1MatchDay : TextView? = null
+    var cvL1 : CardView? = null
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,17 +56,53 @@ class MainActivity : AppCompatActivity() {
         tvmatchDay = findViewById<View>(R.id.tvmatchDay) as TextView
         cvPL = findViewById<View>(R.id.cvPL) as CardView
 
+        //L1
+        tvL1Name = findViewById<View>(R.id.tvNameL1) as TextView
+        tvL1StartDate = findViewById<View>(R.id.tvstartDate1) as TextView
+        tvL1EndDate = findViewById<View>(R.id.tvendDate1) as TextView
+        tvL1MatchDay = findViewById<View>(R.id.tvmatchDay1) as TextView
+        cvL1 = findViewById<View>(R.id.cvL1) as CardView
+
+
         // Call API
         getPLDataHome();
+        getL1DataHome();
 
         //onClick
         clickPL();
+        clickL1();
 
-//        val button:Button = findViewById(R.id.btnClickme)
-//        button.setOnClickListener{
-//            val intent = Intent(this@MainActivity, DemoActivity::class.java)
-//            startActivity(intent)
-//        }
+    }
+
+    private fun getL1DataHome() {
+        val l1Main = RetrofitClient.retrofitInstance?.create(MainAPIL1::class.java)
+        val callL1 = l1Main?.allL1MainData
+
+        callL1?.enqueue(object : Callback<ModelL1Main?> {
+            override fun onResponse(call: Call<ModelL1Main?>, response: Response<ModelL1Main?>) {
+                Log.e(TAG, "onResponse : " + response.body()!!.name)
+                Log.e(TAG, "onResponse: "+ response.body()!!.emblemUrl)
+
+                val L1Main = response.body()
+                tvL1Name!!.text = L1Main!!.name
+                tvL1StartDate!!.text = L1Main!!.currentSeason.startDate
+                tvL1EndDate!!.text = L1Main!!.currentSeason.endDate
+                tvL1StartDate!!.text = L1Main!!.currentSeason.currentMatchday.toString()
+
+            }
+
+            override fun onFailure(call: Call<ModelL1Main?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    private fun clickL1() {
+        val cvL1:CardView = findViewById(R.id.cvL1)
+        cvL1.setOnClickListener {
+            val intent = Intent(this@MainActivity, HomeL1::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun clickPL() {
@@ -79,9 +128,6 @@ class MainActivity : AppCompatActivity() {
                 tvstartDate!!.text = PLMain!!.currentSeason.startDate
                 tvendDate!!.text = PLMain!!.currentSeason.endDate
                 tvmatchDay!!.text = PLMain!!.currentSeason.currentMatchday.toString()
-
-
-
             }
 
             override fun onFailure(call: Call<ModelPLHome?>, t: Throwable) {
