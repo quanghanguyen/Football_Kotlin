@@ -36,6 +36,7 @@ class TeamsPLFragment : Fragment() {
     private var lstTeams: MutableList<Team>? = null
     private var adapter: TeamsAdapterPL? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -91,7 +92,7 @@ class TeamsPLFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_teams_p_l, container, false)
 
         myrecyclerview = v.findViewById<View>(R.id.rcvTeamsPL) as RecyclerView
-        adapter = TeamsAdapterPL(context, lstTeams)
+        adapter = TeamsAdapterPL(requireContext(), lstTeams!!)
         myrecyclerview!!.layoutManager = LinearLayoutManager(activity)
         myrecyclerview!!.adapter = adapter
         return v
