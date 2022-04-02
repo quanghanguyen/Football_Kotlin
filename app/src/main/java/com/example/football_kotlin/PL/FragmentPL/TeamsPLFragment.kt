@@ -22,7 +22,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
- const val BASE_URL_PL_TEAMS = "https://api.football-data.org/v2/competitions/2021/teams"
+// const val BASE_URL_PL_TEAMS = "https://api.football-data.org/v2/competitions/2021/teams"
 
 class TeamsPLFragment : Fragment() {
 

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey">
+
+        <TextView
+            android:id="@+id/tvNameL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Name:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvNameDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tvNameL1"
+            android:text="Aston Villa FC"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvShortNameL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNameL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="ShortName:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvShortNameDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNameL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvShortNameL1"
+            android:text="Aston Villa"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvTLAL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvShortNameL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="TLA:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvTLADetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvShortNameL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvTLAL1"
+            android:text="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvAddressL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTLAL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Address:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvAddressDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTLAL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvAddressL1"
+            android:text="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvPhoneL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvAddressL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Phone:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvPhoneDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvAddressL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvPhoneL1"
+            android:text="3"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvWebsiteL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPhoneL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Website:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvWebsiteDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPhoneL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvWebsiteL1"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvEmailL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWebsiteL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Email:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvEmailDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWebsiteL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvEmailL1"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvFoundedL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmailL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Founded:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvFoundedDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmailL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvFoundedL1"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvVenueL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFoundedL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Venue:"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/tvVenueDetailsL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFoundedL1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/tvVenueL1"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
