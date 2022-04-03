@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.example.football_kotlin.BL.HomeBL
@@ -26,6 +27,9 @@ import retrofit2.create
 const val BASE_URL = "https://api.football-data.org/v2/competitions/2021/"
 
 class MainActivity : AppCompatActivity() {
+
+    var pgBar : ProgressBar? = null
+    var tvHome : TextView? = null
 
     //PL
     private var tvPLName: TextView? = null
@@ -61,6 +65,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+
+        //ProgressBar and Home Textview
+        pgBar = findViewById<View>(R.id.progressBar) as ProgressBar
+        tvHome = findViewById<View>(R.id.tvHome) as TextView
 
         //PL
         tvPLName = findViewById<View>(R.id.tvNamePL) as TextView
@@ -191,9 +199,9 @@ class MainActivity : AppCompatActivity() {
 
                 val L1Main = response.body()
                 tvL1Name!!.text = L1Main!!.name
-                tvL1StartDate!!.text = L1Main!!.currentSeason.startDate
-                tvL1EndDate!!.text = L1Main!!.currentSeason.endDate
-                tvL1StartDate!!.text = L1Main!!.currentSeason.currentMatchday.toString()
+                tvL1StartDate!!.text = L1Main?.currentSeason.startDate
+                tvL1EndDate!!.text = L1Main?.currentSeason.endDate
+                tvL1StartDate!!.text = L1Main?.currentSeason.currentMatchday.toString()
 
             }
 
@@ -234,6 +242,15 @@ class MainActivity : AppCompatActivity() {
                 tvstartDate!!.text = PLMain!!.currentSeason.startDate
                 tvendDate!!.text = PLMain!!.currentSeason.endDate
                 tvmatchDay!!.text = PLMain!!.currentSeason.currentMatchday.toString()
+
+                //ProgressBar
+
+                pgBar!!.visibility = View.GONE
+                cvPL!!.visibility = View.VISIBLE
+                tvHome!!.visibility = View.VISIBLE
+                cvL1!!.visibility = View.VISIBLE
+                cvBL!!.visibility = View.VISIBLE
+                cvSA!!.visibility = View.VISIBLE
             }
 
             override fun onFailure(call: Call<ModelPLHome?>, t: Throwable) {
