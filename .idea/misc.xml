@@ -7,6 +7,7 @@
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_home_bl.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_home_l1.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_home_pl.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_home_sa.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_main2.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
@@ -16,15 +17,19 @@
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_chart_p_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_l1_chart.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_l1_teams.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_s_a_chart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_s_a_teams.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_teams_b_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_teams_p_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_bl.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_l1.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_pl.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_sa.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_l1_teams_items.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_pl_teams_items.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_teams_bl.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_teams_items.xml" value="0.17777777777777778" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_teams_sa.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

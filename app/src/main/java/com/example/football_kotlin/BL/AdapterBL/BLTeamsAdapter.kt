@@ -36,6 +36,7 @@ class BLTeamsAdapter(val context: Context, val lstTeamsBL : List<TeamX>) : Recyc
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         holder.tvBLTeamsName.text = lstTeamsBL[position].name
+
         Glide.with(context)
             .load(lstTeamsBL[position].crestUrl)
             .into(holder.civBLTeams)

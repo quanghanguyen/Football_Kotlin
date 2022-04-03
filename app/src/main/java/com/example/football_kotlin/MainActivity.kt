@@ -15,9 +15,13 @@ import com.example.football_kotlin.L1.ModelL1.ModelL1Main
 import com.example.football_kotlin.PL.HomePL
 import com.example.football_kotlin.PL.InterfacePL.MainAPI
 import com.example.football_kotlin.PL.ModelPL.ModelPLHome
+import com.example.football_kotlin.SA.HomeSA
+import com.example.football_kotlin.SA.InterfaceSA.SAMainAPI
+import com.example.football_kotlin.SA.ModelSA.SAMainModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.create
 
 const val BASE_URL = "https://api.football-data.org/v2/competitions/2021/"
 
@@ -43,6 +47,13 @@ class MainActivity : AppCompatActivity() {
     var tvBLEndDate : TextView? = null
     var tvBLMatchDay : TextView? = null
     var cvBL : CardView? = null
+
+    //SA
+    var tvSAName : TextView? = null
+    var tvSAStartDate : TextView? = null
+    var tvSAEndDate : TextView? = null
+    var tvSAMatchDay : TextView? = null
+    var cvSA : CardView? = null
 
 
 
@@ -72,18 +83,57 @@ class MainActivity : AppCompatActivity() {
         tvBLMatchDay = findViewById<View>(R.id.tvmatchDay2) as TextView
         cvBL = findViewById<View>(R.id.cvBL) as CardView
 
+        //SA
+        tvSAName = findViewById<View>(R.id.tvNameSA) as TextView
+        tvSAStartDate = findViewById(R.id.tvstartDate3)
+        tvSAEndDate = findViewById(R.id.tvendDate3)
+        tvSAMatchDay = findViewById(R.id.tvmatchDay3)
+        cvSA = findViewById(R.id.cvSA)
 
 
         // Call API
         getPLDataHome();
         getL1DataHome();
         getBLDataHome();
+        getSADataHOme();
 
         //onClick
         clickPL();
         clickL1();
         clickBL();
+        clickSA();
 
+    }
+
+    private fun getSADataHOme() {
+
+        val saMain = RetrofitClient.retrofitInstance?.create(SAMainAPI::class.java)
+        val callSAMain = saMain?.callSAMainAPI
+
+        callSAMain?.enqueue(object : Callback<SAMainModel?> {
+            override fun onResponse(call: Call<SAMainModel?>, response: Response<SAMainModel?>) {
+                val saMainData = response.body()
+
+                tvSAName!!.text = saMainData!!.name
+                tvSAStartDate!!.text = saMainData!!.currentSeason.startDate
+                tvSAEndDate!!.text = saMainData!!.currentSeason.endDate
+                tvSAMatchDay!!.text = saMainData!!.currentSeason.currentMatchday.toString()
+
+            }
+
+            override fun onFailure(call: Call<SAMainModel?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+    }
+
+    private fun clickSA() {
+        val cvSA:CardView = findViewById(R.id.cvSA)
+        cvSA.setOnClickListener {
+            val intent = Intent(this@MainActivity, HomeSA::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getBLDataHome() {
