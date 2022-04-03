@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.football_kotlin.BL.HomeBL
 import com.example.football_kotlin.L1.HomeL1
 import com.example.football_kotlin.L1.InterfaceL1.MainAPIL1
 import com.example.football_kotlin.L1.ModelL1.ModelL1Main
@@ -71,7 +72,16 @@ class MainActivity : AppCompatActivity() {
         //onClick
         clickPL();
         clickL1();
+        clickBL();
 
+    }
+
+    private fun clickBL() {
+        val cvBL:CardView = findViewById<View>(R.id.cvBL) as CardView
+        cvBL.setOnClickListener {
+            val intent = Intent(this@MainActivity, HomeBL::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getL1DataHome() {

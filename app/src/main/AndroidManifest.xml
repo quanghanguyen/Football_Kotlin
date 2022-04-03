@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Football_Kotlin">
         <activity
+            android:name=".BL.HomeBL"
+            android:exported="false" />
+        <activity
             android:name=".L1.HomeL1"
             android:exported="false" />
         <activity
