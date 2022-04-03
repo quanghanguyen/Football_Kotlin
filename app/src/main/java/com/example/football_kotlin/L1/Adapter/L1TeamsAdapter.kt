@@ -50,6 +50,7 @@ class L1TeamsAdapter(val context: Context, val L1TeamList : List<Team>) : Recycl
             val tvEmailDetailsL1 = dialog!!.findViewById<View>(R.id.tvEmailDetailsL1) as TextView
             val tvFoundedDetailsL1 = dialog!!.findViewById<View>(R.id.tvFoundedDetailsL1) as TextView
             val tvVenueDetailsL1 = dialog!!.findViewById<View>(R.id.tvVenueDetailsL1) as TextView
+
             //------------------------------
 
             tvNameDetailsL1.text = L1TeamList[vHolder.absoluteAdapterPosition].name
