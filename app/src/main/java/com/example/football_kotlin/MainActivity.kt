@@ -8,22 +8,16 @@ import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.example.football_kotlin.BL.HomeBL
+import com.example.football_kotlin.BL.ModelBL.ModelMain
 import com.example.football_kotlin.L1.HomeL1
 import com.example.football_kotlin.L1.InterfaceL1.MainAPIL1
 import com.example.football_kotlin.L1.ModelL1.ModelL1Main
 import com.example.football_kotlin.PL.HomePL
 import com.example.football_kotlin.PL.InterfacePL.MainAPI
-import com.example.football_kotlin.PL.InterfacePL.PLTeams
 import com.example.football_kotlin.PL.ModelPL.ModelPLHome
-import com.example.football_kotlin.PL.ModelPL.Team
-import com.example.football_kotlin.PL.ModelPL.TeamsDataPL
-import de.hdodenhof.circleimageview.CircleImageView
-import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 const val BASE_URL = "https://api.football-data.org/v2/competitions/2021/"
 
@@ -42,6 +36,13 @@ class MainActivity : AppCompatActivity() {
     var tvL1EndDate : TextView? = null
     var tvL1MatchDay : TextView? = null
     var cvL1 : CardView? = null
+
+    //BL
+    var tvBLName : TextView? = null
+    var tvBLStartDate : TextView? = null
+    var tvBLEndDate : TextView? = null
+    var tvBLMatchDay : TextView? = null
+    var cvBL : CardView? = null
 
 
 
@@ -64,16 +65,61 @@ class MainActivity : AppCompatActivity() {
         tvL1MatchDay = findViewById<View>(R.id.tvmatchDay1) as TextView
         cvL1 = findViewById<View>(R.id.cvL1) as CardView
 
+        //BL
+        tvBLName = findViewById<View>(R.id.tvNameBL) as TextView
+        tvBLStartDate = findViewById<View>(R.id.tvstartDate2) as TextView
+        tvBLEndDate = findViewById<View>(R.id.tvendDate2) as TextView
+        tvBLMatchDay = findViewById<View>(R.id.tvmatchDay2) as TextView
+        cvBL = findViewById<View>(R.id.cvBL) as CardView
+
+
 
         // Call API
         getPLDataHome();
         getL1DataHome();
+        getBLDataHome();
 
         //onClick
         clickPL();
         clickL1();
         clickBL();
 
+    }
+
+    private fun getBLDataHome() {
+        val blMain = RetrofitClient.retrofitInstance?.create(com.example.football_kotlin.BL.InterfaceBL.MainAPI::class.java)
+        val callMainBL = blMain?.allMainDataBL
+
+        callMainBL?.enqueue(object : Callback<ModelMain?> {
+            override fun onResponse(call: Call<ModelMain?>, response: Response<ModelMain?>) {
+                val BLMain = response.body()
+
+                tvBLName!!.text = BLMain!!.name
+                tvBLStartDate!!.text = BLMain!!.currentSeason.startDate
+                tvBLEndDate!!.text = BLMain!!.currentSeason.endDate
+                tvBLMatchDay!!.text = BLMain!!.currentSeason.currentMatchday.toString()
+            }
+
+            override fun onFailure(call: Call<ModelMain?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
+//        callMainBL?.enqueue(object : Callback<ModelMain?> {
+//            override fun onResponse(call: Call<ModelMain?>, response: Response<ModelMain?>) {
+//                val BLMain = response.body()
+//
+//                tvBLName!!.text = BLMain!!.name
+//                tvBLStartDate!!.text = BLMain!!.currentSeason.startDate
+//                tvBLEndDate!!.text = BLMain!!.currentSeason.endDate
+//                tvBLMatchDay!!.text = BLMain!!.currentSeason.currentMatchday.toString()
+//
+//            }
+//
+//            override fun onFailure(call: Call<ModelPLHome?>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//        })
     }
 
     private fun clickBL() {

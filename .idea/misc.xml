@@ -12,14 +12,18 @@
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/dialog_l1.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/dialog_pl.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_chart_b_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_chart_p_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_l1_chart.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_l1_teams.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_teams_b_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/fragment_teams_p_l.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_bl.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_l1.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_chart_pl.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_l1_teams_items.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_pl_teams_items.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_teams_bl.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/Football_Kotlin/app/src/main/res/layout/list_teams_items.xml" value="0.17777777777777778" />
       </map>
     </option>
